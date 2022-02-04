@@ -34,5 +34,5 @@ This month:    (amount)
 This day:      (amount)
 ```
 
-## TODO
+## Todo
 - Publish to NPM for easier installation

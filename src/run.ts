@@ -60,7 +60,7 @@ const run = async () => {
     { value: prevDayData, str: `Yesterday:     ${formatSEK(prevDayData)}` },
     { value: thisYearData, str: `This year:     ${formatSEK(thisYearData)}` },
     { value: thisMonthData, str: `This month:    ${formatSEK(thisMonthData)}` },
-    { value: thisDayData, str: `This day:      ${formatSEK(thisDayData)}` },
+    { value: thisDayData, str: `Today:         ${formatSEK(thisDayData)}` },
   ].reduce((acc, current) => {
     return current.str.length > (acc ?? 0) ? current.str.length : acc
   }, 0)
@@ -71,7 +71,7 @@ const run = async () => {
   console.log(new Array(longestRowLength).fill('-').join(''))
   console.log(`This year:     ${formatSEK(thisYearData)}`)
   console.log(`This month:    ${formatSEK(thisMonthData)}`)
-  console.log(`This day:      ${formatSEK(thisDayData)}`)
+  console.log(`Today:         ${formatSEK(thisDayData)}`)
   process.exit(0)
 }
 
