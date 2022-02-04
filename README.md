@@ -28,7 +28,7 @@ And it will output:
 Last year:     (amount)
 Last month:    (amount)
 Yesterday:     (amount)
--------------------------
+-----------------------
 This year:     (amount)
 This month:    (amount)
 This day:      (amount)
