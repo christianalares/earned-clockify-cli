@@ -3,7 +3,7 @@ import 'isomorphic-fetch'
 import getConfig from './getConfig'
 import { printFetchError } from './print'
 
-const getEarned = async (from: string, to: string): Promise<number | null> => {
+const getEarned = async (from: string, to: string): Promise<number | string | null> => {
   const config = getConfig()
   const endpointUrl = `https://reports.api.clockify.me/v1/workspaces/${config['workspace-id']}/reports/summary`
 
@@ -24,6 +24,10 @@ const getEarned = async (from: string, to: string): Promise<number | null> => {
       },
       body: JSON.stringify(body),
     })
+
+    if (response.status !== 200) {
+      return `Error (code: ${response.status})`
+    }
 
     const json: JSONResponse = await response.json()
 

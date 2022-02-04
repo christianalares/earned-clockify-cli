@@ -3,7 +3,11 @@ import getConfig from './getConfig'
 import getEarned from './getEarned'
 
 const formatISODate = (date: string) => date.split('+')[0] + 'Z'
-const formatSEK = (sek: number | null) => {
+const formatSEK = (sek: number | null | string) => {
+  if (typeof sek === 'string') {
+    return sek
+  }
+
   return `${Intl.NumberFormat('sv-SE', {
     style: 'currency',
     currency: 'SEK',
