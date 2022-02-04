@@ -33,3 +33,6 @@ This year:     (amount)
 This month:    (amount)
 This day:      (amount)
 ```
+
+## TODO
+- Publish to NPM for easier installation
