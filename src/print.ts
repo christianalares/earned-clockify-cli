@@ -33,6 +33,11 @@ export const printInvalidArgs = () => {
   console.log('earned --token=my-secret-token --workspace-id=my-workspace-id')
 }
 
+export const printFetchError = () => {
+  console.log('')
+  console.log('🚨 Unknown error fetching earnings')
+}
+
 export const printConfigSet = () => {
   console.log('')
   console.log('✅ Config set')
