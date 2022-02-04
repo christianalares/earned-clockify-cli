@@ -50,8 +50,6 @@ const run = async () => {
   const thisMonthData = await getEarned(thisMonth.start, thisMonth.end)
   const thisDayData = await getEarned(thisDay.start, thisDay.end)
 
-  console.log({ thisDayData })
-
   console.log(`Last year:     ${formatSEK(prevYearData)}`)
   console.log(`Last month:    ${formatSEK(prevMonthData)}`)
   console.log(`Yesterday:     ${formatSEK(prevDayData)}`)
