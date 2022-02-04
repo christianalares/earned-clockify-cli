@@ -1,0 +1,34 @@
+{
+  "name": "earned",
+  "version": "1.0.0",
+  "main": "build/index.js",
+  "author": "Christian Alares",
+  "license": "MIT",
+  "private": true,
+  "bin": {
+    "earned": "./dist/cli.js"
+  },
+  "files": [
+    "/build/cli.js"
+  ],
+  "scripts": {
+    "dev": "tsc --watch",
+    "start": "node ./build/index.js",
+    "watch": "nodemon ./build/index.js",
+    "bundle": "esbuild ./src/index.ts --bundle --platform=node --outfile=dist/cli.js",
+    "package": "pkg --compress GZip dist/cli.js --output earned && cp earned /usr/local/bin/earned && rm earned"
+  },
+  "dependencies": {
+    "@types/luxon": "^2.0.9",
+    "isomorphic-fetch": "^3.0.0",
+    "luxon": "^2.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.14",
+    "concurrently": "^7.0.0",
+    "esbuild": "^0.14.18",
+    "nodemon": "^2.0.15",
+    "pkg": "^5.5.2",
+    "typescript": "^4.5.5"
+  }
+}
