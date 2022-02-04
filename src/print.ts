@@ -1,3 +1,5 @@
+import { CONFIG_PATH } from './constants'
+
 export const printInvalidConfigFile = (configPath: string) => {
   console.log('')
   console.log('🚨 Invalid config file')
@@ -40,6 +42,6 @@ export const printFetchError = () => {
 
 export const printConfigSet = () => {
   console.log('')
-  console.log('✅ Config set')
+  console.log(`✅ Config saved to: ${CONFIG_PATH}`)
   console.log('Run "earned" to see your earnings')
 }

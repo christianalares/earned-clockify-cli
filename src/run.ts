@@ -50,10 +50,21 @@ const run = async () => {
   const thisMonthData = await getEarned(thisMonth.start, thisMonth.end)
   const thisDayData = await getEarned(thisDay.start, thisDay.end)
 
+  const longestRowLength = [
+    { value: prevYearData, str: `Last year:     ${formatSEK(prevYearData)}` },
+    { value: prevMonthData, str: `Last month:    ${formatSEK(prevMonthData)}` },
+    { value: prevDayData, str: `Yesterday:     ${formatSEK(prevDayData)}` },
+    { value: thisYearData, str: `This year:     ${formatSEK(thisYearData)}` },
+    { value: thisMonthData, str: `This month:    ${formatSEK(thisMonthData)}` },
+    { value: thisDayData, str: `This day:      ${formatSEK(thisDayData)}` },
+  ].reduce((acc, current) => {
+    return current.str.length > (acc ?? 0) ? current.str.length : acc
+  }, 0)
+
   console.log(`Last year:     ${formatSEK(prevYearData)}`)
   console.log(`Last month:    ${formatSEK(prevMonthData)}`)
   console.log(`Yesterday:     ${formatSEK(prevDayData)}`)
-  console.log('-------------------------')
+  console.log(new Array(longestRowLength).fill('-').join(''))
   console.log(`This year:     ${formatSEK(thisYearData)}`)
   console.log(`This month:    ${formatSEK(thisMonthData)}`)
   console.log(`This day:      ${formatSEK(thisDayData)}`)
