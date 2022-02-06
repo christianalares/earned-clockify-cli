@@ -1,11 +1,11 @@
 import { existsSync, readFileSync } from 'fs'
 import { CONFIG_PATH } from './constants'
-import { printInvalidConfigFile, printConfigFileNowFound } from './print'
+import { printInvalidConfigFile, printConfigFileNotFound } from './print'
 import { Config } from './types'
 
 const getConfig = (): Config => {
   if (!existsSync(CONFIG_PATH)) {
-    printConfigFileNowFound(CONFIG_PATH)
+    printConfigFileNotFound(CONFIG_PATH)
     process.exit(1)
   }
 

@@ -14,7 +14,7 @@ export const printInvalidConfigFile = (configPath: string) => {
   `)
 }
 
-export const printConfigFileNowFound = (configPath: string) => {
+export const printConfigFileNotFound = (configPath: string) => {
   console.log('')
   console.log('🚨 Config file could not be found')
   console.log('Run "earned --token=<token> --workspace-id=<workspace-id>"')
