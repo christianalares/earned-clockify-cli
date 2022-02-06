@@ -9,7 +9,14 @@ const getConfig = (): Config => {
     process.exit(1)
   }
 
-  const config = JSON.parse(readFileSync(CONFIG_PATH, 'utf8').trim())
+  let config
+  
+  try {
+    config = JSON.parse(readFileSync(CONFIG_PATH, 'utf8').trim())
+  } catch (e) {
+    printInvalidConfigFile(CONFIG_PATH)
+    process.exit(1)
+  }
 
   if (!config.token || !config['workspace-id']) {
     printInvalidConfigFile(CONFIG_PATH)
