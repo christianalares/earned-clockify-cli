@@ -1,11 +1,19 @@
 import { CONFIG_PATH } from './constants'
 
-export const printInvalidConfigFile = (configPath: string) => {
+export const printErrorReadingConfigFile = () => {
+  console.log('')
+  console.log('🚨 Error reading config file')
+  console.log('Try running "earned --token=<token> --workspace-id=<workspace-id>"')
+  console.log(`or manually removing the config file (${CONFIG_PATH}) and try again`)
+  console.log('')
+}
+
+export const printInvalidConfigFile = () => {
   console.log('')
   console.log('🚨 Invalid config file')
   console.log('Run "earned --token=<token> --workspace-id=<workspace-id>"')
   console.log('')
-  console.log(`The config will be saved to ${configPath} in this format:`)
+  console.log(`The config will be saved to ${CONFIG_PATH} in this format:`)
   console.log(`
 {
   "token": "my-secret-token",
@@ -14,12 +22,12 @@ export const printInvalidConfigFile = (configPath: string) => {
   `)
 }
 
-export const printConfigFileNotFound = (configPath: string) => {
+export const printConfigFileNotFound = () => {
   console.log('')
   console.log('🚨 Config file could not be found')
   console.log('Run "earned --token=<token> --workspace-id=<workspace-id>"')
   console.log('')
-  console.log(`The config will be saved to ${configPath} in this format:`)
+  console.log(`The config will be saved to ${CONFIG_PATH} in this format:`)
   console.log(`
 {
   "token": "my-secret-token",

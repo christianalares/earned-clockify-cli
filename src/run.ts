@@ -1,5 +1,4 @@
 import { DateTime } from 'luxon'
-import getConfig from './getConfig'
 import getEarned from './getEarned'
 
 const formatISODate = (date: string) => date.split('+')[0] + 'Z'
