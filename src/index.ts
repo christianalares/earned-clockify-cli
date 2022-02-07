@@ -1,8 +1,8 @@
 #!/usr/bin/env node
+import type { Config } from './types'
 import { printConfigSet, printInvalidArgs } from './print'
 import run from './run'
 import setConfig from './setConfig'
-import { Config } from './types'
 
 const [, , ...inputArgs] = process.argv
 
