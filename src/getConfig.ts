@@ -13,7 +13,7 @@ const getConfig = (): Config => {
 
   try {
     config = JSON.parse(readFileSync(CONFIG_PATH, 'utf8').trim())
-  } catch (e) {
+  } catch {
     printErrorReadingConfigFile()
     process.exit(1)
   }
