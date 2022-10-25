@@ -37,7 +37,7 @@ const getEarned = async (from: string, to: string): Promise<number | string | nu
       return null
     }
 
-    return Math.round((total / 100) * 1.25) // Add moms
+    return Math.round(total / 100)
   } catch {
     printFetchError()
     process.exit(1)
